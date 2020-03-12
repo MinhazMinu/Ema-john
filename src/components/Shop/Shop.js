@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import "./Shop.css";
 import fakeData from "../../fakeData";
 import Product from "../Products/Product";
+import Cart from "../Cart/Cart";
 const Shop = () => {
   const first10 = fakeData.slice(0, 10);
   const [cart, setCart] = useState([]);
+  const totalPrice = cart.reduce((total, prd) => total + prd.price, 0);
 
   const [products, setProducts] = useState(first10);
   const handdleAddProduct = product => {
@@ -25,7 +27,7 @@ const Shop = () => {
         </p>
       </div>
       <div className="cart-container">
-        <h5>Order Summery: {cart.length}</h5>
+        <Cart cart={cart}></Cart>
       </div>
     </div>
   );
