@@ -19,7 +19,7 @@ const Cart = props => {
     <div>
       <h4>Order Summery</h4>
       <p>Items Orderd : {cart.length}</p>
-      <p>Shipping Cost: </p>
+      <p>Shipping Cost:{shipping} </p>
       <p>Tex : {tex}</p>
       <p>Total Price: {grandPrice}</p>
     </div>
